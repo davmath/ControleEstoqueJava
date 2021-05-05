@@ -11,8 +11,8 @@ public class Produto {
 	private String descricaoProduto;
 	private String unidadeMedida;
 	private Date criadoEm;
-	
-	public String getDesscricaoProduto() {
+
+	public String getDescricaoProduto() {
 		return descricaoProduto;
 	}
 	public void setDescricaoProduto(String unidadeMedida) {
@@ -37,7 +37,7 @@ public class Produto {
 	
 	@Override
 	public String toString() {
-		return "Descrição: " + getDesscricaoProduto() + " | Unidade de Medida: " + getUnidadeMedida() + " | Criado em: " + getCriadoEm();
+		return "Descrição: " + getDescricaoProduto() + " | Unidade de Medida: " + getUnidadeMedida() + " | Criado em: " + getCriadoEm();
 	}
 	
 }

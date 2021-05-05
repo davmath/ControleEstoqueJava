@@ -13,16 +13,16 @@ public class ProdutoController {
 	}
 
 	public static boolean cadastrar(Produto produto) {
-		if(buscarPorNome(produto.getDesscricaoProduto()) == null) {
+		if(buscarPorNome(produto.getDescricaoProduto()) == null) {
 			produtos.add(produto);
 			return true;
 		}
 		return false;
 	}	
 	
-	public static Produto buscarPorNome(String nome) {
+	public static Produto buscarPorNome(String descricaoProduto) {
 		for(Produto produtoCadastrado : produtos) {
-			if(produtoCadastrado.getDesscricaoProduto().equals(nome)) {
+			if(produtoCadastrado.getDescricaoProduto().equals(descricaoProduto)) {
 				return produtoCadastrado;
 			}
 		}	
