@@ -1,7 +1,6 @@
 package controllers;
 
 import java.util.ArrayList;
-
 import models.Produto;
 
 public class ProdutoController {
@@ -13,14 +12,14 @@ public class ProdutoController {
 	}
 
 	public static boolean cadastrar(Produto produto) {
-		if(buscarPorNome(produto.getDescricaoProduto()) == null) {
+		if(buscarPorDescricao(produto.getDescricaoProduto()) == null) {
 			produtos.add(produto);
 			return true;
 		}
 		return false;
 	}	
 	
-	public static Produto buscarPorNome(String descricaoProduto) {
+	public static Produto buscarPorDescricao(String descricaoProduto) {
 		for(Produto produtoCadastrado : produtos) {
 			if(produtoCadastrado.getDescricaoProduto().equals(descricaoProduto)) {
 				return produtoCadastrado;

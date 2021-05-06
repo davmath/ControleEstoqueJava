@@ -24,6 +24,7 @@ public class Principal {
 			case 2:	
 				break;
 			case 3:	
+				CadastrarFornecedor.renderizar();
 				break;
 			case 4:	
 				break;
