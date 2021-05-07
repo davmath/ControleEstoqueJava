@@ -1,5 +1,8 @@
 package controllers;
+
+
 import java.util.ArrayList;
+
 import models.Fornecedor;
 
 
@@ -9,6 +12,20 @@ public class FornecedorController {
 	
 	public static ArrayList<Fornecedor> listar() {
 		return fornecedores;
+	}
+	
+	public static boolean deletar(String nomeFornecedor) {
+	    for(int i = 0; i < fornecedores.size(); i++)
+	    {
+	        Fornecedor f = fornecedores.get(i);
+
+	        if(f.getNomeFornecedor().equals(nomeFornecedor))
+	        {
+	            fornecedores.remove(f);
+	            return false;
+	  	    }
+	    }
+	    return true;
 	}
 	
 	public static boolean cadastrar(Fornecedor fornecedor) {

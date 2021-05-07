@@ -19,7 +19,7 @@ public class EntrarProduto {
 	private static ArrayList<Entrada> entradas;
 
 	
-	private static String descricaoProduto, nomeFornecedor, opcao;
+	private static String descricaoProduto, nomeFornecedor;
 
 	public static void renderizar() {
 		entrada = new Entrada();
@@ -33,34 +33,39 @@ public class EntrarProduto {
 		System.out.println("\nInforme o produto: ");
 		descricaoProduto = sc.next();
 		produto = ProdutoController.buscarPorDescricao(descricaoProduto);
-		if(produto !=null) {
+		
+		//Fornecedor
+		System.out.println("\nInforme o fornecedor: ");
+		nomeFornecedor = sc.next();
+		fornecedor = FornecedorController.buscarPorNome(nomeFornecedor);
+		
+		//Quantidade
+		if(produto != null && fornecedor !=null) {
+			entrada.setProduto(produto);
 			entrada.setFornecedor(fornecedor);
-			//Fornecedor
-			System.out.println("\nInforme o fornecedor: ");
-			nomeFornecedor = sc.next();
-			fornecedor = FornecedorController.buscarPorNome(nomeFornecedor);
-			if(fornecedor != null) {
-				//Produtos
-				do {
-					entrada = new Entrada();
-					produto = new Produto();
-					entrada.setQuantidade(entrada);
-					System.out.println("\nDigite a quantidade a ser adicionada: ");
-					entrada.setQuantidade(sc.nextInt());
-					entrada = EntradaController.buscarPorProduto(produto);
+			System.out.print("Informe a quantidade: ");
+			entrada.setQuantidade(sc.nextInt());
+			entradas.add(entrada);
+			
+			//Lote
+			System.out.println("Informe o lote: ");
+			entrada.setLote(sc.next());
+			entradas.add(entrada);
+			
+			//Valor
+			System.out.println("Informe o valor: ");
+			entrada.setValor(sc.nextDouble());
+			entradas.add(entrada);
+		
 
-					entradas.add(entrada);
-					System.out.println("\nDeseja adicionar mais produtos?(Y/N)");
-				}while(opcao.equals("Y"));
+			if(EntradaController.cadastrar(entrada)) {
+				System.out.println("\nEntrada do produto efetuada com sucesso!");
+			}else {
+				System.out.println("Erro ao dar entrada!");
 			}
-			else {
-				System.out.println("Esse fornecedor não existe.");
-			}
-		}
-		else {
-			System.out.println("Esse produto não existe.");
 		}
 		
+
 	}
 	
 	

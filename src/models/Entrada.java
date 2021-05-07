@@ -40,4 +40,10 @@ public class Entrada {
 	}
 	
 
+	@Override
+	public String toString() {
+		return "Produto: " + getProduto() + " | Fornecedor: " + getFornecedor() + " | Quantidade: " 
+	+ getQuantidade() + " | Lote: " + getLote() + " | Valor: " + getValor();
+	}
+	
 }

@@ -30,7 +30,7 @@ public class Produto {
 
 	@Override
 	public String toString() {
-		return "Descrição: " + getDescricaoProduto() + " | Unidade de Medida: " + getUnidadeMedida();
+		return "DescriÃ§Ã£o: " + getDescricaoProduto() + " | Unidade de Medida: " + getUnidadeMedida();
 	}
 	
 }
