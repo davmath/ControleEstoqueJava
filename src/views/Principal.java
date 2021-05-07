@@ -20,6 +20,7 @@ public class Principal {
 			opcao = sc.nextInt();
 			switch (opcao) {
 			case 1:
+				EntrarProduto.renderizar();
 				break;
 			case 2:	
 				break;
